@@ -1,0 +1,6 @@
+/app/_env.js
+/node_modules/*
+/dist/*
+*.sketch
+*.log
+.DS_Store
