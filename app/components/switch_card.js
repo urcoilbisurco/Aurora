@@ -1,16 +1,17 @@
 var React = require('react');
 var Switch= require('./switch');
 var utils=require("../utils/particle");
-var BackButton= require("./back_button.js");
-var Header= require("./header.js");
-const SwitchPage = React.createClass({
+
+const SwitchCard = React.createClass({
   componentDidMount:function(){
-    utils.getLightStatus()
+    if(this.props.toggle!="-"){
+      utils.getLightStatus(this.props.toggle)
       .then(function(state){
         this.setState({
           on:state
         })
       }.bind(this))
+    }
   },
   getInitialState:function() {
     return {
@@ -23,18 +24,18 @@ const SwitchPage = React.createClass({
       on: n
     })
     d=(n==1 ? "on" : "off");
-    utils.setLightStatus({arg:d})
+    utils.setLightStatus(this.props.toggle, {arg:d})
   },
   render:function() {
-    label=(this.state.on ? "On" : "Off");
+    label=(this.state.on ? "on" : "off");
+    background={
+      "backgroundImage":"url('./app/assets/"+this.props.background+".jpg')",
+    }
     return (
       <div className="lights_switch">
-        <div className="main">
-          <Header>
-            <BackButton />
-          </Header>
-          <div className="textContainer">
-            <div className="text">Lights are {label}</div>
+        <div className="main" style={background}>
+          <div className="textContainer" >
+            <div className="text">{this.props.name} {this.props.verb} {label}</div>
             <Switch on={this.state.on} onChange={this.onChange} labelOff={"Switch On"} labelOn={"Switch Off"} />
           </div>
         </div>
@@ -44,4 +45,4 @@ const SwitchPage = React.createClass({
 });
 
 
-module.exports=SwitchPage;
+module.exports=SwitchCard;
