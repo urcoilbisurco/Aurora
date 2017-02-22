@@ -10,38 +10,8 @@ body{
   max-width:450px;
   margin:0 auto;
 }
-#app{
-  background-size:cover;
-  background-position:50%;
-  background-image:url("./assets/home.jpg");
-}
-.time{
-  margin-left: auto;
-  padding: 16px;
-  font-weight: 300;
-  font-size: 30px;
-  color: #333;
-}
-.header{
-  color:black;
-  display:flex;
-  height:300px;
-  flex-direction: column;
 
-  .main{
-    height:100%;
-    display:flex;
-    flex-direction:column;
-    background:rgba(255,255,255,0.5);
-    .title{
-      font-size:25px;
-      font-weight:700;
-      margin-top:auto;
-      color:#333;
-      padding:32px 16px;
-    }
-  }
-}
+
 .weather{
   margin-bottom:8px;
   color:white;
@@ -74,80 +44,4 @@ body{
       font-style:italic;
     }
   }
-}
-.section{
-  .section-title{
-    padding:20px;
-    padding-bottom:12px;
-    font-size:20px;
-    font-weight:700;
-    margin-top:auto;
-    color:#333;
-  }
-}
-.lights_switch{
-  margin-bottom:8px;
-
-  .main{
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
-    height:240px;
-    background-size:cover;
-    background-position:50%;
-  }
-  .textContainer{
-    margin-top: auto;
-    display:flex;
-    flex-direction: row;
-    align-items: center;
-    background:rgba(0,0,0,0.4);
-    padding:32px 16px;
-  }
-  .text{
-    color:white;
-    font-size:20px;
-    font-weight:300;
-  }
-  .switch{
-    margin-left:auto;
-  }
-}
-
-
-.switch{
-  border:3px solid white;
-  border-radius:3px;
-  color:white;
-  padding:4px 8px;
-  cursor:pointer;
-  width:50px;
-  display:flex;
-  padding:2px;
-  border-radius:999em;
-  -webkit-tap-highlight-color: transparent;
-  cursor:pointer;
-  .handler{
-    -webkit-tap-highlight-color: transparent;
-    width:20px;
-    height:20px;
-    border-radius:999em;
-    -webkit-transition: .4s;
-    transition: .4s;
-  }
-  &.on{
-    background:rgba(255,255,255,0.1);
-    .handler{
-      background:white;
-    }
-  }
-  &.off{
-    .handler{
-      -webkit-transform: translateX(30px);
-      -ms-transform: translateX(30px);
-      transform: translateX(30px);
-      background:#536DFE;
-    }
-  }
-
 }

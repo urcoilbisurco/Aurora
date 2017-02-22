@@ -10,6 +10,7 @@
   "author": "Francesco Marassi <marassi.francesco@gmail.com>",
   "license": "ISC",
   "dependencies": {
+    "aphrodite": "^1.1.0",
     "axios": "^0.15.3",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",

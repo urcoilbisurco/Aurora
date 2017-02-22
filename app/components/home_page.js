@@ -42,7 +42,7 @@ const HomePage = React.createClass({
             <TemperatureCard/>
             <Section title="Controls">
               <SwitchCard name="Star Lights" verb="are" background="star-lights" color="" toggle="led"/>
-              <SwitchCard name="Main Light" verb="is" background="main-lights" color="" toggle="-"/>
+              <SwitchCard name="Main Light" verb="is" background="main-lights" color="" toggle="relay"/>
               <SwitchCard name="TV" verb="is" background="netflix" color="" toggle="-"/>
             </Section>
           </div>

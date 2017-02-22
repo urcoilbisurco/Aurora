@@ -1,11 +1,14 @@
 var React = require('react');
+var Stylesheet=require("aphrodite/no-important").StyleSheet;
+var css=require("aphrodite/no-important").css;
+
 var Switch= require('./switch');
 var utils=require("../utils/particle");
 
 const SwitchCard = React.createClass({
   componentDidMount:function(){
     if(this.props.toggle!="-"){
-      utils.getLightStatus(this.props.toggle)
+      utils.getStatus(this.props.toggle)
       .then(function(state){
         this.setState({
           on:state
@@ -24,7 +27,7 @@ const SwitchCard = React.createClass({
       on: n
     })
     d=(n==1 ? "on" : "off");
-    utils.setLightStatus(this.props.toggle, {arg:d})
+    utils.setStatus(this.props.toggle, {arg:d})
   },
   render:function() {
     label=(this.state.on ? "on" : "off");
@@ -32,11 +35,13 @@ const SwitchCard = React.createClass({
       "backgroundImage":"url('./app/assets/"+this.props.background+".jpg')",
     }
     return (
-      <div className="lights_switch">
-        <div className="main" style={background}>
-          <div className="textContainer" >
-            <div className="text">{this.props.name} {this.props.verb} {label}</div>
-            <Switch on={this.state.on} onChange={this.onChange} labelOff={"Switch On"} labelOn={"Switch Off"} />
+      <div className={css(style.switchCard)}>
+        <div className={css(style.main)} style={background}>
+          <div className={css(style.textContainer)} >
+            <div className={css(style.text)}>{this.props.name} {this.props.verb} {label}</div>
+            <span className={css(style._switch)}>
+              <Switch on={this.state.on} onChange={this.onChange} labelOff={"Switch On"} labelOn={"Switch Off"} />
+            </span>
           </div>
         </div>
       </div>
@@ -44,5 +49,34 @@ const SwitchCard = React.createClass({
   },
 });
 
+const style=Stylesheet.create({
+  switchCard:{
+    marginBottom:"8px",
+  },
+  main:{
+    display:"flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    height:"240px",
+    backgroundSize:"cover",
+    backgroundPosition:"50%",
+  },
+  textContainer:{
+    marginTop: "auto",
+    display:"flex",
+    flexDirection: "row",
+    alignItems: "center",
+    background:"rgba(0,0,0,0.4)",
+    padding:"32px 16px"
+  },
+  text:{
+    color:"white",
+    fontSize:"20px",
+    fontWeight:"300"
+  },
+  _switch:{
+    marginLeft:"auto"
+  }
+});
 
 module.exports=SwitchCard;

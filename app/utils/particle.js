@@ -13,7 +13,7 @@ function postValue(key, data){
 }
 
 var helpers={
-  getLightStatus:function(name){
+  getStatus:function(name){
     return getValue(name+"_status")
     .then(function(response){
       console.log(response.data)
@@ -22,7 +22,7 @@ var helpers={
       console.log("ERROR", err);
     });
   },
-  setLightStatus:function(name, data){
+  setStatus:function(name, data){
     postValue(name, data)
     .then(function(info){
     }).catch(function(err){
