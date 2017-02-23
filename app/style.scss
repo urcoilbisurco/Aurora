@@ -5,43 +5,9 @@ $secondaryColor:#607D8B; //grey
   margin:0;
   font-family: 'Open Sans', sans-serif;
 }
+
 body{
   background:#f4f4f4;
   max-width:450px;
   margin:0 auto;
-}
-
-
-.weather{
-  margin-bottom:8px;
-  color:white;
-  background-size:cover;
-  background-position:50%;
-  .main{
-    background:rgba(63,81,181,0.8);//$primaryColor;
-    display:flex;
-    align-items: center;
-    flex-direction: row;
-    padding:16px;
-    &.indoor{
-      background:rgba(96,125,139,0.8);//$primaryColor;
-    }
-  }
-  .title{
-    font-size:20px;
-  }
-  .temp{
-    margin-left:auto;
-    text-align: right;
-    display:flex;
-    flex-direction: column;
-    .temperature{
-      font-size:25px;
-      font-weight:300;
-    }
-    .temp-description{
-      font-weight:300;
-      font-style:italic;
-    }
-  }
 }

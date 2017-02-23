@@ -3,8 +3,8 @@ var React = require('react');
 var SwitchCard=require("./switch_card");
 var Section=require("./section");
 var HeaderCard=require("./header_card");
-var WeatherCard=require("./weather_card");
-var TemperatureCard=require("./temperature_card");
+var WeatherCard=require("./temperature/temperature_outdoor");
+var IndoorCard=require("./temperature/temperature_indoor");
 
 //For animation
 var ReactMotion=require("react-motion");
@@ -38,8 +38,10 @@ const HomePage = React.createClass({
             transform: `translate3d(0, ${y}px, 0)`,
           }}>
             <HeaderCard/>
+
             <WeatherCard/>
-            <TemperatureCard/>
+            <IndoorCard />
+
             <Section title="Controls">
               <SwitchCard name="Star Lights" verb="are" background="star-lights" color="" toggle="led"/>
               <SwitchCard name="Main Light" verb="is" background="main-lights" color="" toggle="relay"/>
