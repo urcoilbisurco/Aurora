@@ -17,11 +17,12 @@ const OutdoorCard = React.createClass({
     };
   },
   render:function() {
+    temp=""+this.state.temp;
     return (
       <TemperatureCard
       title="Outdoor"
       background="outdoor.jpg"
-      temperature={`${this.state.temp}`}
+      temperature={temp}
       description={this.state.descr}
     />
   )},

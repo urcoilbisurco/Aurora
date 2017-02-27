@@ -6,54 +6,22 @@ var HeaderCard=require("./header_card");
 var WeatherCard=require("./temperature/temperature_outdoor");
 var IndoorCard=require("./temperature/temperature_indoor");
 
-//For animation
-var ReactMotion=require("react-motion");
-var Motion=ReactMotion.Motion;
-var spring=ReactMotion.spring;
-
 
 const HomePage = React.createClass({
-  getInitialState:function(){
-    return {
-      pos:200,
-      opacity:0
-    }
-  },
-  componentDidMount:function(){
-    setTimeout(function(){
-      this.setState({pos:0, opacity:1})
-    }.bind(this),200)
-  },
-
-
   render:function() {
     return (
       <div>
-        <Motion style={{opacity: spring(this.state.opacity, {stiffness: 70, damping: 20}), y: spring(this.state.pos, {stiffness: 70, damping: 20})}}>
-        { ({opacity, y}) =>
-
-          <div style={{
-            opacity:`${opacity}`,
-            WebkitTransform: `translate3d(0, ${y}px, 0)`,
-            transform: `translate3d(0, ${y}px, 0)`,
-          }}>
-            <HeaderCard/>
-
-            <WeatherCard/>
-            <IndoorCard />
-
-            <Section title="Controls">
-              <SwitchCard name="Star Lights" verb="are" background="star-lights" color="" toggle="led"/>
-              <SwitchCard name="Main Light" verb="is" background="main-lights" color="" toggle="relay"/>
-              <SwitchCard name="TV" verb="is" background="netflix" color="" toggle="-"/>
-            </Section>
-          </div>
-        }
-        </Motion>
+        <HeaderCard/>
+        <WeatherCard/>
+        <IndoorCard />
+        <Section title="Controls">
+          <SwitchCard name="Star Lights" verb="are" background="star-lights" color="" toggle="stars"/>
+          <SwitchCard name="Main Light" verb="is" background="main-lights" color="" toggle="-"/>
+          <SwitchCard name="TV" verb="is" background="netflix" color="" toggle="tv"/>
+        </Section>
       </div>
     );
   },
 });
-
 
 module.exports=HomePage;

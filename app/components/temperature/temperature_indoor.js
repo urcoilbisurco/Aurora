@@ -13,12 +13,13 @@ const IndoorTemperatureCard = React.createClass({
     };
   },
   render:function() {
+    var descr="Humidity: "+this.state.descr
     return (
       <TemperatureCard
       title="Indoor"
       background="indoor.jpg"
       temperature={this.state.temp}
-      description={`Humidity: ${this.state.descr}`}
+      description={descr}
     />
   )},
 });
