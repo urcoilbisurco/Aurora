@@ -65,7 +65,7 @@ const style=Stylesheet.create({
     flexDirection: "column",
     backgroundSize:"cover",
     backgroundPosition:"50%",
-    backgroundImage:'url("./app/assets/home.jpg")',
+    backgroundImage:'url("./src/assets/home.jpg")',
   },
   main:{
     height:"100%",

@@ -1,0 +1,27 @@
+.switch_card{
+  margin-bottom:8px;
+  .main{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    height:240px;
+    background-size:cover;
+    background-position:50%;
+  }
+  .text_container{
+    margin-top: auto;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    background:rgba(0,0,0,0.4);
+    padding:32px 16px;
+  }
+  .text{
+    color:white;
+    font-size:20px;
+    font-weight:300;
+  }
+  .switch{
+    margin-left:auto;
+  }
+}
