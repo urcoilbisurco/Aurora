@@ -1,7 +1,5 @@
 var React = require('react');
-var Stylesheet=require("aphrodite/no-important").StyleSheet;
-var css=require("aphrodite/no-important").css;
-
+var css=require("./header_card.scss");
 
 const Time=React.createClass({
   componentDidMount:function(){
@@ -20,7 +18,7 @@ const Time=React.createClass({
   },
   render:function(){
     return (
-      <div className={css(style.time)}>{this.state.hour}:{this.state.minutes}</div>
+      <div className={css.time}>{this.state.hour}:{this.state.minutes}</div>
     )
   }
 });
@@ -44,48 +42,15 @@ const HeaderCard = React.createClass({
   render:function() {
     var hi=this.sayHi("Francesco");
     return (
-      <div className={css(style.header)}>
-        <div className={css(style.main)}>
+      <div className={css.header}>
+        <div className={css.main}>
           <Time/>
-          <div className={css(style.title)}>
+          <div className={css.title}>
             {hi}
           </div>
         </div>
       </div>
     );
-  },
-});
-
-
-const style=Stylesheet.create({
-  header:{
-    color:"black",
-    display:"flex",
-    height:"300px",
-    flexDirection: "column",
-    backgroundSize:"cover",
-    backgroundPosition:"50%",
-    backgroundImage:'url("./src/assets/home.jpg")',
-  },
-  main:{
-    height:"100%",
-    display:"flex",
-    flexDirection:"column",
-    background:"rgba(255,255,255,0.5)",
-  },
-  title:{
-    fontSize:"25px",
-    fontWeight:"700",
-    marginTop:"auto",
-    color:"#333",
-    padding:"32px 16px"
-  },
-  time:{
-    marginLeft: "auto",
-    padding: "16px",
-    fontWeight: "300",
-    fontSize: "30px",
-    color: "#333",
   },
 });
 

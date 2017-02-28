@@ -1,8 +1,8 @@
 var React = require('react');
 
 var SwitchCard=require("./switch_card/switch_card");
-var Section=require("./section");
-var HeaderCard=require("./header_card");
+var Section=require("./section/section");
+var HeaderCard=require("./header/header_card");
 var WeatherCard=require("./temperature/temperature_outdoor");
 var IndoorCard=require("./temperature/temperature_indoor");
 
