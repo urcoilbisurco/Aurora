@@ -1,4 +1,4 @@
-/app/_env.js
+/src/_env.js
 /node_modules/*
 /dist/*
 *.sketch
