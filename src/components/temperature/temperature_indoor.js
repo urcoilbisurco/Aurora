@@ -9,8 +9,14 @@ const IndoorTemperatureCard = React.createClass({
   getInitialState:function() {
     return {
       temp:"16",
-      descr:"14%"
+      descr:"14%",
+      open:false
     };
+  },
+  handleClick:function(){
+    this.setState({
+      open:!this.state.open,
+    })
   },
   render:function() {
     var descr="Humidity: "+this.state.descr
@@ -19,6 +25,8 @@ const IndoorTemperatureCard = React.createClass({
       title="Indoor"
       background="indoor.jpg"
       temperature={this.state.temp}
+      open={this.state.open}
+      onClick={this.handleClick}
       description={descr}
     />
   )},

@@ -13,7 +13,8 @@ const OutdoorCard = React.createClass({
   getInitialState:function() {
     return {
       temp:"-",
-      descr:"-"
+      descr:"-",
+      open:false,
     };
   },
   render:function() {
@@ -23,6 +24,7 @@ const OutdoorCard = React.createClass({
       title="Outdoor"
       background="outdoor.jpg"
       temperature={temp}
+      open={this.state.open}
       description={this.state.descr}
     />
   )},
