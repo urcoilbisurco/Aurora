@@ -1,9 +1,19 @@
 .switch_card{
   min-width:40%;
-  margin-bottom:8px;
-  margin:8px;
   border-radius:5px;
+  &:first-child{
+    .main{
+      margin-left:8px;
+    }
+  }
+
+  &:last-child{
+    .main{
+      margin-right:8px;
+    }
+  }
   .main{
+    margin:8px 4px;
     border-radius:5px;
     display:flex;
     flex-direction: column;
