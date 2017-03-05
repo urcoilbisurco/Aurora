@@ -9,3 +9,8 @@
     color:#333;
   }
 }
+.horizontal{
+  display:flex;
+  flex-wrap:nowrap;
+  overflow-x: scroll;
+}

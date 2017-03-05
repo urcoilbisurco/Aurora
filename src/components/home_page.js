@@ -1,6 +1,7 @@
 var React = require('react');
 
 var SwitchCard=require("./switch_card/switch_card");
+var SceneCard=require("./scene_card/scene_card");
 var Section=require("./section/section");
 var HeaderCard=require("./header/header_card");
 var WeatherCard=require("./temperature/temperature_outdoor");
@@ -14,10 +15,14 @@ const HomePage = React.createClass({
         <HeaderCard/>
         <WeatherCard/>
         <IndoorCard />
-        <Section title="Controls">
-          <SwitchCard name="Star Lights" verb="are" background="star-lights" color="" toggle="stars"/>
-          <SwitchCard name="Main Light" verb="is" background="main-lights" color="" toggle="-"/>
-          <SwitchCard name="TV" verb="is" background="netflix" color="" toggle="tv"/>
+        <Section title="Controls" direction="horizontal">
+          <SwitchCard name="Star Lights" verb="are" background="star-lights" toggle="stars"/>
+          <SwitchCard name="Main Light" verb="is" background="main-lights" toggle="-"/>
+          <SwitchCard name="TV" verb="is" background="netflix" toggle="tv"/>
+        </Section>
+        <Section title="Scenes" direction="horizontal">
+          <SceneCard name="Reading" background="star-lights" toggle="-"/>
+          <SceneCard name="Telefilm" background="main-lights" toggle="-"/>
         </Section>
       </div>
     );

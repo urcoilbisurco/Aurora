@@ -1,14 +1,15 @@
-.switch_card{
+.scene_card{
   min-width:40%;
   margin-bottom:8px;
   margin:8px;
   border-radius:5px;
+  cursor:pointer;
   .main{
     border-radius:5px;
     display:flex;
     flex-direction: column;
     justify-content: center;
-    height:240px;
+    height:150px;
     background-size:cover;
     background-position:50%;
   }
@@ -17,10 +18,13 @@
     height:100%;
     display:flex;
     flex-direction: column;
-    background:rgba(0,0,0,0.4);
+    background:rgba(0,0,0,0.7);
     padding:16px;
   }
-  .text{
+  .open{
+    background:rgba(0,0,0,0.2);
+  }
+.text{
     color:white;
     font-size:20px;
     font-weight:300;
